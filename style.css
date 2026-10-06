@@ -1,0 +1,224 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #050505, #171717);
+    color: white;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+/* MENÚ */
+
+#menu {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#menu h1 {
+    font-size: 55px;
+    color: #ff3131;
+    text-shadow: 0 0 20px red;
+    margin-bottom: 15px;
+}
+
+#menu p {
+    font-size: 20px;
+    margin: 8px;
+}
+
+button {
+    margin-top: 25px;
+    padding: 15px 45px;
+    border: none;
+    border-radius: 12px;
+    background: #ff3131;
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    transform: scale(1.08);
+    background: #ff5555;
+}
+
+.controls {
+    margin-top: 25px;
+    padding: 15px;
+    border: 1px solid #555;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.05);
+}
+
+/* JUEGO */
+
+.hidden {
+    display: none !important;
+}
+
+#game {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+.hud {
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+
+    display: flex;
+    gap: 30px;
+
+    background: rgba(0,0,0,0.75);
+    padding: 12px 25px;
+    border-radius: 15px;
+
+    font-size: 18px;
+}
+
+#road {
+    position: absolute;
+    width: 500px;
+    height: 100vh;
+    left: 50%;
+    transform: translateX(-50%);
+
+    background: #303030;
+    border-left: 10px solid white;
+    border-right: 10px solid white;
+
+    overflow: hidden;
+}
+
+/* Líneas de la carretera */
+
+.lane {
+    position: absolute;
+    width: 8px;
+    height: 100%;
+    background: repeating-linear-gradient(
+        to bottom,
+        white 0px,
+        white 50px,
+        transparent 50px,
+        transparent 100px
+    );
+    opacity: 0.8;
+}
+
+.lane1 {
+    left: 33%;
+}
+
+.lane2 {
+    left: 66%;
+}
+
+/* AUTO DEL JUGADOR */
+
+#player {
+    position: absolute;
+    bottom: 80px;
+    left: 205px;
+
+    font-size: 65px;
+
+    z-index: 5;
+
+    transition: left 0.08s;
+}
+
+/* AUTOS ENEMIGOS */
+
+.enemy {
+    position: absolute;
+    font-size: 60px;
+    top: -100px;
+}
+
+.enemy1 {
+    left: 40px;
+}
+
+.enemy2 {
+    left: 210px;
+}
+
+.enemy3 {
+    left: 350px;
+}
+
+#backButton {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+
+    font-size: 14px;
+    padding: 10px 20px;
+}
+
+/* GAME OVER */
+
+#gameOver {
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0,0,0,0.9);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    z-index: 100;
+}
+
+#gameOver h1 {
+    color: #ff3131;
+    font-size: 60px;
+    text-shadow: 0 0 20px red;
+}
+
+#gameOver p {
+    font-size: 25px;
+    margin-top: 20px;
+}
+
+/* CELULAR */
+
+@media(max-width:600px) {
+
+    #menu h1 {
+        font-size: 35px;
+    }
+
+    #road {
+        width: 100vw;
+    }
+
+    #player {
+        left: calc(50% - 30px);
+    }
+
+    .hud {
+        width: 95%;
+        justify-content: center;
+        gap: 10px;
+        font-size: 13px;
+    }
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SebastianCars 🏎️</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="menu">
+        <h1>🏎️ SEBASTIANCARS</h1>
+        <p>¡Prepárate para la carrera!</p>
+
+        <button onclick="startGame()">JUGAR</button>
+
+        <div class="controls">
+            <p>⬅️ ➡️ Mover el auto</p>
+            <p>⬆️ Acelerar</p>
+            <p>⬇️ Frenar</p>
+        </div>
+    </div>
+
+    <div id="game" class="hidden">
+
+        <div class="hud">
+            <span>🏁 Vuelta: <b id="lap">1</b></span>
+            <span>⭐ Puntos: <b id="score">0</b></span>
+            <span>💨 Velocidad: <b id="speed">0</b> km/h</span>
+        </div>
+
+        <div id="road">
+
+            <div class="lane lane1"></div>
+            <div class="lane lane2"></div>
+            <div class="lane lane3"></div>
+
+            <div id="player">🏎️</div>
+
+            <div class="enemy enemy1">🚗</div>
+            <div class="enemy enemy2">🚙</div>
+            <div class="enemy enemy3">🏎️</div>
+
+        </div>
+
+        <button id="backButton" onclick="backToMenu()">MENÚ</button>
+
+    </div>
+
+    <div id="gameOver" class="hidden">
+        <h1>💥 ¡CHOQUE!</h1>
+        <p>Puntuación: <span id="finalScore">0</span></p>
+        <button onclick="restartGame()">VOLVER A JUGAR</button>
+    </div>
+<script src="3. game.js"></script>
+    <script src="game.js"></script>
+
+</body>
+</html>
